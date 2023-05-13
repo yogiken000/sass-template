@@ -16,3 +16,4 @@ jobs:
         config: ${{ secrets.CONFIG }} # ssh target だけで接続できるように設定
     - name: Git pull
       run: ssh webloid 'git -C /home/zcrgftai/public_html/portfolio pull'
+
