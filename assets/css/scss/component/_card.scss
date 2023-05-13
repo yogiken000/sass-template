@@ -1,0 +1,60 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: #fff;
+    box-shadow: 0 2px 5px #ccc;
+}
+.card__imgBox {
+    position: relative;
+}
+.ratio-3-2 {
+    position: relative;
+
+    &::before {
+        display: block;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding-top: 66.66%;
+        content: '';
+    }
+
+    > img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.card__img {
+}
+.card__content {
+    padding: 20px;
+}
+.card__ttl {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+.card__txt {
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+}
+.card__link {
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding: 20px;
+}
+.card__link a {
+    text-decoration: none;
+    color: #0bd;
+    margin: 0 10px;
+}
+.card__link a:hover {
+    color: #0090aa;
+}
