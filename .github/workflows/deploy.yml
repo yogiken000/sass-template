@@ -18,4 +18,4 @@ jobs:
         username: ${{ secrets.DEPLOY_USER_SERVER }}
         key: ${{ secrets.SSH_KEY }}
         script: |
-          rsync -avz --delete ${{ github.workspace }}/ /home/zcrgftai/public_html/portfolio/
+          rsync -avz --delete C:/xampp/htdocs/html-template/ /home/zcrgftai/public_html/portfolio/
