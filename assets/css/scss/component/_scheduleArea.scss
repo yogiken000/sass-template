@@ -1,0 +1,250 @@
+.scheduleArea {
+  background-color: #F2F8FF;
+  padding-top: 66px;
+  padding-bottom: 70px;
+
+  .c-ttlStyle01 .mainTxt {
+    font-size: 42px;
+  }
+}
+.p-scheduleList {
+  display: flex;
+  flex-direction: column;
+  gap: 25px 0;
+
+  .c-note {
+    margin-top: 14px;
+    .note__txt {
+      font-size: 14px;
+
+      &::before {
+        top: 7px;
+      }
+    }
+  }
+}
+.scheduleList__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0 25px;
+  background-color: #fff;
+  margin-left: 109px;
+  padding: 19px 25px;
+  border-radius: 9px;
+  position: relative;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 25px;
+    left: -33px;
+    width: 17px;
+    height: 17px;
+    margin: auto;
+    background-color: #00A0DF;
+    border-radius: 50%;
+    content: '';
+  }
+  &::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: -27px;
+    bottom: 0;
+    width: 4px;
+    height: calc(100% + 25px);
+    margin: auto;
+    background-color: #00A0DF;
+    content: "";
+  }
+  &:first-child::after {
+    top: 105px;
+  }
+  &:last-child::after {
+    top: -32px;
+    bottom: auto;
+    height: 70px;
+  }
+
+  &.no-time {
+      &::before {
+        display: none;
+      }
+  }
+}
+.scheduleList__time {
+  position: absolute;
+  top: 18px;
+  left: -109px;
+  color: #00A0DF;
+  font-size: 20px;
+  font-weight: 600;
+}
+.scheduleList__cont {
+  flex: 1;
+}
+.scheduleList__ttl {
+  margin-bottom: 2px;
+  font-size: 22px;
+  color: #00A0DF;
+  font-weight: 600;
+}
+.scheduleList__txt {
+  font-size: 16px;
+  line-height: 1.625;
+
+  a {
+    text-decoration: underline;
+    position: relative;
+
+    &::after {
+      display: inline-block;
+      width: 15px;
+      height: 12px;
+      margin: auto;
+      background: url(../img/common/icon_window.svg) no-repeat center center / 100%;
+      content: '';
+    }
+
+    &:hover {
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+}
+.scheduleList__imgBox {
+  width: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  .img {
+
+  }
+}
+
+@include sp {
+  .scheduleArea {
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    .c-ttlStyle01 .mainTxt {
+      font-size: 25px;
+    }
+  }
+  .p-scheduleList {
+    display: flex;
+    flex-direction: column;
+    gap: 25px 0;
+
+    .c-note {
+      margin-top: 14px;
+      padding: 16px 14px 14px;
+
+      .note__ttl {
+        font-size: 14px;
+      }
+      .note__txt {
+        font-size: 12px;
+
+        &::before {
+          top: 5px;
+        }
+      }
+    }
+  }
+  .scheduleList__item {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0 25px;
+    background-color: #fff;
+    margin-left: 60px;
+    padding: 15px 15px;
+    border-radius: 9px;
+    position: relative;
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: 24px;
+      left: -20px;
+      width: 12px;
+      height: 12px;
+      margin: auto;
+      background-color: #00A0DF;
+      border-radius: 50%;
+      content: '';
+    }
+    &::after {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -15px;
+      bottom: 0;
+      width: 2px;
+      height: calc(100% + 25px);
+      margin: auto;
+      background-color: #00A0DF;
+      content: "";
+    }
+    &:first-child::after {
+      top: 93px;
+    }
+    &:last-child::after {
+      top: -41px;
+      bottom: auto;
+      height: 70px;
+    }
+
+    &.no-time {
+        &::before {
+          display: none;
+        }
+    }
+  }
+  .scheduleList__time {
+    top: 20px;
+    left: -65px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .scheduleList__cont {
+    flex: 1;
+  }
+  .scheduleList__ttl {
+    margin-bottom: 4px;
+    font-size: 18px;
+  }
+  .scheduleList__txt {
+    font-size: 14px;
+    line-height: 1.625;
+
+    a {
+      text-decoration: underline;
+      position: relative;
+
+      &::after {
+        width: 15px;
+        height: 12px;
+        margin: auto;
+      }
+
+      &:hover {
+        opacity: 1;
+        text-decoration: none;
+      }
+    }
+  }
+  .scheduleList__imgBox {
+    width: auto;
+    margin: 15px -15px -15px;
+    border-radius: 0 0 15px 15px;
+    overflow: hidden;
+    .img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      object-position: 50% 30%;
+
+    }
+  }
+}

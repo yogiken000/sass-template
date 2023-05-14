@@ -1,0 +1,341 @@
+.courseArea {
+  .c-ttlStyle01 {
+    margin: 0 auto 56px;
+  }
+}
+.c-courceDetList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 64px 40px;
+}
+.courceDetList__item {
+  width: calc((100% - (40px * 1)) / 2);
+}
+.courceDetList__imgBox {
+  margin: 0 0 20px 0;
+  border-radius: 15px;
+  overflow: hidden;
+  .img {
+
+  }
+}
+.courceDetList__ttl {
+  font-size: 24px;
+  font-weight: 600;
+  color: #009ED9;
+  padding: 0 0 13px 0;
+  margin-bottom: 12px;
+  position: relative;
+
+  &::before, &::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #DBDBDB;
+    border-radius: 10px;
+    content: '';
+  }
+  &::after {
+    width: 39px;
+    background-color: #009ED9;
+    border-radius: 10px;
+  }
+}
+.courceDetList__info {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 13px;
+  font-weight: 600;
+
+  .blueTxt {
+    color: #009ED9;
+  }
+}
+.courceDetList__price {
+  .txtBig {
+    font-size: 24px;
+  }
+  .txtSmall {
+    font-size: 16px;
+    margin-left: -5px;
+  }
+}
+.courceDetList__time {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  margin-left: 13px;
+  font-weight: 600;
+
+  .ttl{
+    position: relative;
+    padding: 0 0 0 20px;
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: 5px;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      margin: auto;
+      background: url(../img/common/icon_time.svg) no-repeat center center / 100%;
+      content: '';
+    }
+
+  }
+  .cont {
+
+  }
+
+}
+
+.courceDetList__link {
+  margin-top: 20px;
+
+  .icon {
+    width: 34px;
+    height: 34px;
+  }
+}
+.courceDetList__info.charter {
+  display: block;
+
+  .courceDetList__price {
+    margin-bottom: 6px;
+    .txtSmall {
+      margin-left: 0;
+    }
+  }
+  .discountBox {
+    margin-top: 8px;
+    margin-bottom: 21px;
+  }
+  .discount {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 7px 0;
+    border-bottom: dashed 1px #DEE4EB;
+
+    &:first-child  {
+      border-top: solid 1px #DEE4EB;
+    }
+    &:last-child  {
+      border-bottom: solid 1px #DEE4EB;
+    }
+  }
+  .discount-price {
+    font-size: 16px;
+    .small {
+      font-size: 12px;
+    }
+  }
+  .discount-before {
+    position: relative;
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: calc(100% + 3px);
+      height: 2px;
+      background-color: #E53270;
+      transform: rotate(7deg);
+      transform-origin: top left;
+      content: '';
+    }
+  }
+  .discount-after {
+    position: relative;
+    padding: 0 0 0 20px;
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      line-height: 1;
+      margin: auto;
+      content: '→';
+    }
+  }
+}
+
+@include sp {
+  .courseArea {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    .c-ttlStyle01 {
+      margin: 0 auto 30px;
+    }
+  }
+  .c-courceDetList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 64px 40px;
+  }
+  .courceDetList__item {
+    width: calc((100% - (40px * 0)) / 1);
+  }
+  .courceDetList__imgBox {
+    margin: 0 0 15px 0;
+    border-radius: 15px;
+    overflow: hidden;
+    .img {
+
+    }
+  }
+  .courceDetList__ttl {
+    font-size: 18px;
+    font-weight: 600;
+    color: #009ED9;
+    padding: 0 0 8px 0;
+    margin-bottom: 10px;
+    position: relative;
+
+    &::before, &::after {
+      display: block;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 3px;
+      background-color: #DBDBDB;
+      border-radius: 10px;
+      content: '';
+    }
+    &::after {
+      width: 39px;
+      background-color: #009ED9;
+      border-radius: 10px;
+    }
+  }
+  .courceDetList__info {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+    font-weight: 600;
+
+    .blueTxt {
+      color: #009ED9;
+    }
+  }
+  .courceDetList__price {
+    .txtBig {
+      font-size: 18px;
+    }
+    .txtSmall {
+      font-size: 14px;
+      margin-left: -3px;
+    }
+  }
+  .courceDetList__time {
+    font-size: 14px;
+    margin-left: 13px;
+    font-weight: 600;
+
+    .ttl{
+      position: relative;
+      padding: 0 0 0 20px;
+
+      &::before {
+        display: block;
+        position: absolute;
+        top: 3px;
+        left: 0;
+        width: 15px;
+        height: 15px;
+      }
+
+    }
+    .cont {
+
+    }
+
+  }
+
+  .courceDetList__link {
+    margin-top: 20px;
+
+    .icon {
+      width: 34px;
+      height: 34px;
+    }
+  }
+  .courceDetList__info.charter {
+    display: block;
+    .ttl {
+      font-size: 14px;
+    }
+
+    .courceDetList__price {
+      margin-bottom: 8px;
+      .txtSmall {
+        margin-left: 0;
+      }
+    }
+    .discountBox {
+      margin-top: 8px;
+      margin-bottom: 21px;
+    }
+    .discount {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 7px 0;
+      border-bottom: dashed 1px #DEE4EB;
+
+      &:first-child  {
+        border-top: solid 1px #DEE4EB;
+      }
+      &:last-child  {
+        border-bottom: solid 1px #DEE4EB;
+      }
+    }
+    .discount-price {
+      font-size: 16px;
+      .small {
+        font-size: 12px;
+      }
+    }
+    .discount-before {
+      position: relative;
+
+      &::before {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        width: calc(100% + 3px);
+        height: 2px;
+        background-color: #E53270;
+        transform: rotate(7deg);
+        transform-origin: top left;
+        content: '';
+      }
+    }
+    .discount-after {
+      position: relative;
+      padding: 0 0 0 20px;
+
+      &::before {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        line-height: 1;
+        margin: auto;
+        content: '→';
+      }
+    }
+  }
+}

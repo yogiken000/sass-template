@@ -1,0 +1,168 @@
+.c-note {
+  padding: 16px 17px 14px;
+  background-color: #f5fbfd;
+  border-radius: 15px;
+}
+.note__ttl {
+  font-size: 16px;
+  font-weight: 600;
+  position: relative;
+  margin: 0 0 7px 0;
+  padding: 0 0 0 23px;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 17px;
+    height: 17px;
+    margin: auto;
+    background: url(../img/common/icon_note-blue.svg) no-repeat center center /
+      100%;
+    content: "";
+  }
+}
+.note__txt {
+  position: relative;
+  padding: 0 0 0 11px;
+  line-height: 1.6875;
+  font-size: 16px;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 6px;
+    height: 9px;
+    margin: auto;
+    background: url(../img/common/icon_list-tri-blue.svg) no-repeat center
+      center / 100%;
+    content: "";
+  }
+
+  & + & {
+    margin-top: 4px;
+  }
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      opacity: 1;
+      text-decoration: none;
+    }
+  }
+}
+
+/*** red ***/
+.c-note.red {
+  .note__ttl::before {
+    background-image: url(../img/common/icon_note-red.svg);
+  }
+  .note__txt::before {
+    background-image: url(../img/common/icon_list-tri-red.svg);
+  }
+}
+
+.c-noteBold {
+  .note__ttl {
+    position: relative;
+    margin-bottom: 4px;
+    padding: 0 0 0 11px;
+    line-height: 1.625;
+    font-size: 16px;
+    font-weight: 600;
+    &:before {
+      display: block;
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 6px;
+      height: 9px;
+      margin: auto;
+      background: url(../img/common/icon_list-tri-blue.svg) no-repeat center
+        center/100%;
+      content: "";
+    }
+    &:not(:first-of-type) {
+      margin-top: 10px;
+    }
+  }
+  .note__txt {
+    &:before {
+      content: normal;
+    }
+  }
+}
+
+@include sp {
+  .c-note {
+    padding: 16px 17px 14px;
+    background-color: #f5fbfd;
+    border-radius: 15px;
+  }
+  .note__ttl {
+    font-size: 14px;
+    font-weight: 600;
+    position: relative;
+    margin: 0 0 3px 0;
+    padding: 0 0 0 20px;
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: 3px;
+      left: 0;
+      width: 15px;
+      height: 15px;
+      margin: auto;
+      background: url(../img/common/icon_note-blue.svg) no-repeat center center /
+        100%;
+      content: "";
+    }
+  }
+  .note__txt {
+    position: relative;
+    padding: 0 0 0 11px;
+    line-height: 1.6;
+    font-size: 14px;
+
+    &::before {
+      display: block;
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 6px;
+      height: 9px;
+      margin: auto;
+      background: url(../img/common/icon_list-tri-blue.svg) no-repeat center
+        center / 100%;
+      content: "";
+    }
+
+    & + & {
+      margin-top: 4px;
+    }
+
+    a {
+      text-decoration: underline;
+
+      &:hover {
+        opacity: 1;
+        text-decoration: none;
+      }
+    }
+  }
+
+  /*** red ***/
+  .c-note.red {
+    .note__ttl::before {
+      background-image: url(../img/common/icon_note-red.svg);
+    }
+    .note__txt::before {
+      background-image: url(../img/common/icon_list-tri-red.svg);
+    }
+  }
+}

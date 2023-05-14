@@ -1,0 +1,128 @@
+.c-rowB {
+  display: flex;
+  align-items: center;
+  gap: 0 55px;
+}
+.rowB__imgBox {
+  width: 531px;
+  flex-grow: 1;
+  border-radius: 30px;
+  overflow: hidden;
+
+  .img {
+
+  }
+}
+.rowB__contBox {
+  width: 573px;
+  flex-grow: 1;
+}
+.rowB__cat {
+  display: flex;
+  align-items: center;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 31px;
+  margin: 0 0 17px 0;
+  border: solid 2px #071C27;
+  border-radius: 20px;
+  padding: 2px 12px;
+  white-space: nowrap;
+
+  .icon {
+    margin: 0 5px 0 0;
+  }
+  .txt {
+    font-size: 16px;
+    font-weight: 600;
+    color: #071C27;
+  }
+}
+.rowB__ttl {
+  font-size: 32px;
+  margin: 0 0 13px 0;
+  color: #2195C5;
+  font-weight: 600;
+}
+.rowB__lead {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.55;
+}
+.rowB__txt {
+  font-size: 16px;
+  font-weight: 300;
+}
+.rowB__link {
+  margin-top: 27px;
+}
+
+@include sp {
+  .c-rowB {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0 55px;
+  }
+  .rowB__imgBox {
+    width: auto;
+    margin: 0 0 28px 0;
+    flex-grow: 1;
+    border-radius: 20px;
+    overflow: hidden;
+
+    .img {
+
+    }
+  }
+  .rowB__contBox {
+    width: auto;
+    flex-grow: 1;
+  }
+  .rowB__cat {
+    display: flex;
+    align-items: center;
+    width: -moz-fit-content;
+    width: fit-content;
+    height: 26px;
+    margin: 0 0 10px 0;
+    border: solid 1px #071C27;
+    border-radius: 20px;
+    padding: 2px 12px;
+
+    .icon {
+      margin: 0 5px 0 0;
+      height: 15px;
+
+      &.turtle {
+        height: 26px;
+        margin: 0 -2px 0 -3px;
+      }
+    }
+    .txt {
+      font-size: 13px;
+      font-weight: 600;
+      color: #071C27;
+    }
+  }
+  .rowB__ttl {
+    font-size: 26px;
+    margin: 0 0 8px 0;
+    color: #2195C5;
+    font-weight: 600;
+  }
+  .rowB__lead {
+    margin: 0 0 16px 0;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.55;
+  }
+  .rowB__txt {
+    font-size: 15px;
+    font-weight: 300;
+  }
+  .rowB__link {
+    margin-top: 20px;
+  }
+}

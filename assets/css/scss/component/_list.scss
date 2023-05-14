@@ -1,0 +1,20 @@
+.c-list {
+  .list__txt {
+    position: relative;
+    padding: 0 0 0 11px;
+    font-size: 14px;
+    line-height: 1.6875;
+    &::before {
+      display: block;
+      position: absolute;
+      top: 8px;
+      left: 0;
+      width: 6px;
+      height: 9px;
+      margin: auto;
+      background: url(../img/common/icon_list-tri-blue.svg) no-repeat center
+        center/100%;
+      content: "";
+    }
+  }
+}

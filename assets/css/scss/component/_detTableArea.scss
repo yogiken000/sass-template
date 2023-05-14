@@ -1,0 +1,150 @@
+.detTableListBox {
+  margin-top: 84px;
+}
+.c-tableList {
+  position: relative;
+
+  &::before,&::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    height: 2px;
+    background-color: #DBDBDB;
+    border-radius: 10px;
+    content: "";
+  }
+  &::after {
+    z-index: 5;
+    width: 56px;
+    background-color: #009ED9;
+  }
+}
+.tableList__item {
+  display: flex;
+  position: relative;
+
+  &::before,&::after {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #DBDBDB;
+    border-radius: 10px;
+    content: "";
+  }
+  &::after {
+    z-index: 2;
+    width: 56px;
+    background-color: #009ED9;
+  }
+
+}
+.tableList__ttl {
+  width: 260px;
+  padding: 22px 30px;
+  background-color: #F5FBFD;
+  font-size: 16px;
+  font-weight: 600;
+  color: #009ED9;
+}
+.tableList__cont {
+  flex: 1;
+  padding: 17px 30px;
+}
+.tableList__txt {
+  font-size: 16px;
+  position: relative;
+  padding: 0 0 0 16px;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    margin: auto;
+    background: url(../img/common/icon_circle-double-blue.svg) no-repeat center center/100%;
+    content: "";
+  }
+
+  &.noDot {
+    padding-left: 0;
+    &::before{
+      display: none;
+    }
+  }
+}
+
+@include sp {
+  .detTableListBox {
+    margin-top: 60px;
+  }
+  .c-tableList {
+    position: relative;
+
+    &::before,&::after {
+      height: 2px;
+    }
+    &::after {
+      z-index: 5;
+      width: 56px;
+      background-color: #009ED9;
+    }
+  }
+  .tableList__item {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+    &::before,&::after {
+      height: 2px;
+    }
+    &::after {
+      z-index: 2;
+      width: 56px;
+      background-color: #009ED9;
+    }
+
+
+  }
+  .tableList__ttl {
+    width: auto;
+    padding: 10px 15px;
+    background-color: #F5FBFD;
+    font-size: 16px;
+    font-weight: 600;
+    color: #009ED9;
+  }
+  .tableList__cont {
+    flex: 1;
+    padding: 10px 15px 20px;
+  }
+  .tableList__txt {
+    font-size: 15px;
+    position: relative;
+    padding: 0 0 0 16px;
+    & + & {
+      margin-top: 3px;
+    }
+
+    &::before {
+      top: 6px;
+      left: 0;
+      width: 12px;
+      height: 12px;
+    }
+
+    &.noDot {
+      padding-left: 0;
+      &::before{
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.c-indentItems {
+}
+.indentItem {
+  display: flex;
+}
+.indentList__head {
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+@include sp {
+  .indentItem {
+    display: block;
+  }
+}
