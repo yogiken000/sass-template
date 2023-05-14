@@ -1,19 +1,35 @@
+# トリガーの指定。言うまでもないが、以下は「 develop branch に push した時」となる。
 on:
   push:
     branches:
       - main
-name: Deploy to retrorocket.biz
+
+# 実行する処理を記述する。
 jobs:
-  publish:
-    name: Deploy to retrorocket.biz
+  deploy:
+    # 走らせる仮想環境を決定する。
     runs-on: ubuntu-latest
     steps:
-    - name: Install SSH key
-      uses: shimataro/ssh-key-action@v1
-      with:
-        private-key: ${{ secrets.SSH_KEY }}
-        known-hosts: ${{ secrets.KNOWN_HOSTS }}
-        config: ${{ secrets.CONFIG }} # ssh target だけで接続できるように設定
-    - name: Git pull
-      run: ssh webloid 'git -C /home/zcrgftai/public_html/portfolio pull'
-
+      # develop ブランチを参照する。後ほど詳述。
+      - uses: actions/checkout@v2
+        with:
+          ref: main
+      # `uses` コマンドに対しては名前を付けることも可能。
+      - name: Node setup
+        uses: actions/setup-node@v1
+      # ビルドコマンドを走らせる。installを忘れないこと。
+      - run: yarn install && yarn build
+      # 秘密鍵に対する設定。やや回りくどいのは permission 変更のためだと考えている
+      - name: ssh key generate
+        run: echo "$SSH_SECRET_KEY" > key && chmod 600 key
+        env:
+          # ここの `secrets` が GitHub 内での API である模様。直後のプロパティ名は手順1.2. で保存したものと同名であるように注意。
+          SSH_SECRET_KEY: ${{ secrets.SSH_KEY }}
+      # 同期のための rsync コマンド。後ほど詳述
+      - name: rsync deploy
+        run: rsync --checksum            \
+          -av                            \
+          --delete                       \
+          -e "ssh -p 22 -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" \
+          C:/Users/user/Documents/test-temp                     \
+          zcrgftai@web-loid.mixh.jp:/home/zcrgftai/public_html/portfolio
