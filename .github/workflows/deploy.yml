@@ -18,7 +18,7 @@ jobs:
           uses: burnett01/rsync-deployments@5.1
           with:
             switches: -avz --delete
-            path: / #mixhostに送りたいファイルのあるパスを指定
+            path: ./ #mixhostに送りたいファイルのあるパスを指定
             remote_path: /home/zcrgftai/public_html/portfolio #mixhostのどこに同期させるか
             remote_host: ${{ secrets.DEPLOY_HOST_SERVER }}
             remote_user: ${{ secrets.DEPLOY_USER_SERVER }}
