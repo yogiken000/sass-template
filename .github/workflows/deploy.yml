@@ -1,4 +1,5 @@
-name: Sync with Server
+name: deploy to mixhost
+
 on:
   push:
     branches:
@@ -8,14 +9,18 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      
-    - name: Sync with Server
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.DEPLOY_HOST_SERVER }}
-        username: ${{ secrets.DEPLOY_USER_SERVER }}
-        key: ${{ secrets.SSH_KEY }}
-        script: |
-          rsync -avz --delete ./ /home/zcrgftai/public_html/portfolio/
+        - uses: actions/checkout@v2
+        - name: ssh key generate
+          run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
+          env:
+            SSH_PRIVATE_KEY: ${{ secrets.SSH_KEY }} #githubに登録したmixhostへの秘密鍵を指定
+        - name: rsync deployments
+          uses: burnett01/rsync-deployments@5.1
+          with:
+            switches: -avz --delete
+            path: / #mixhostに送りたいファイルのあるパスを指定
+            remote_path: /home/zcrgftai/public_html/portfolio #mixhostのどこに同期させるか
+            remote_host: ${{ secrets.DEPLOY_HOST_SERVER }}
+            remote_user: ${{ secrets.DEPLOY_USER_SERVER }}
+            remote_port: 22
+            remote_key: ${{ secrets.SSH_KEY }}
