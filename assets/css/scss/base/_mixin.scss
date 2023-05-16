@@ -1,0 +1,14 @@
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* font
+――――――――――――――――――――――――――――――――――――――――――――――*/
+@mixin font($size: null, $height: null, $weight: null){
+  @if $size {
+    font-size: $size;
+  }
+  @if $height {
+    line-height: calc($height / $size);
+  }
+  @if $weight {
+    font-weight: $weight;
+  }
+}
