@@ -456,6 +456,14 @@ body.is-active {
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* デフォルトの設定
 ――――――――――――――――――――――――――――――――――――――――――――――*/
+* > *:first-child {
+  margin-top: 0;
+}
+
+* > *:last-child {
+  margin-bottom: 0;
+}
+
 img {
   display: block;
   max-width: 100%;
