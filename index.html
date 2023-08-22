@@ -1,20 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta charset="UTF-8">
   <title>Github Actions</title>
-
+  <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
 </head>
 <body>
-  <p class="txt">
-    ムラエ
-  </p>
+
+
+  <div class="box01">
+
+  </div>
+
+  <div class="box02">
+
+  </div>
 
   <style>
-    .txt {
-      color: #0600ff;
-      font-size: 50px;
-      font-weight: bold;
+    .box01 {
+      height: 500px;
+      background-color: #53a3ff;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 60px));
+    }
+
+    .box02 {
+      margin-top: -60px;
+      height: 500px;
+      background-color: #f5b672;
+      clip-path: polygon(0 0, 100% 60px, 100% 100%, 0 calc(100% - 60px));
     }
   </style>
 </body>

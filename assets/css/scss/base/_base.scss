@@ -1,11 +1,22 @@
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* html,body
 ――――――――――――――――――――――――――――――――――――――――――――――*/
+* {
+  min-height: 0;
+  min-width: 0;
+}
 html {
-  scroll-padding-top: 100px;
+
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+  @include sp {
+
+  }
 }
 
 body {
+  min-height: 100vh;
   color: #003046;
   font-size: 16px;
   font-family: $font-family;
@@ -38,13 +49,6 @@ body {
   .bodyBorder {
     border-width: 4px;
   }
-}
-
-/*――――――――――――――――――――――――――――――――――――――――――――
-/* font
-――――――――――――――――――――――――――――――――――――――――――――――*/
-.font-maven {
-  font-family: $font-maven;
 }
 
 
@@ -103,23 +107,31 @@ textarea {
 ――――――――――――――――――――――――――――――――――――――――――――――*/
 
 /*** コンテナ ***/
-.container {
-  width: 100%;
-  max-width: $container-width;
-  margin: 0 auto;
-}
-.l-container {
-  overflow: hidden;
+.l-bodyContainer {
 }
 
 /*** section ***/
 .sec {
-  padding: 75px 60px 75px;
+  padding: 75px $pd-pc 75px;
+  position: relative;
 }
 .inner {
   width: 100%;
-  max-width: 1280px;
+  max-width: $container-width;
   margin: 0 auto;
+}
+
+
+@include sp {
+  .sec {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .inner {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
 }
 
 @include mid {
@@ -149,6 +161,47 @@ textarea {
 .topOnly {
   display: none;
 }
+
+
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* 余白調整
+――――――――――――――――――――――――――――――――――――――――――――――*/
+.l-pd {
+  padding-right: $pd-pc;
+  padding-left: $pd-pc;
+  }
+  .l-pd-left {
+  padding-left: $pd-pc;
+  }
+  .l-pd-right {
+  padding-right:$pd-pc;
+  }
+  .l-pd0-left {
+  margin-left: $pd-pc-negative;
+  }
+  .l-pd0-right {
+  margin-right: $pd-pc-negative;
+  }
+
+  @include sp {
+  .l-pd {
+      padding-right: 15px;
+      padding-left: 15px;
+  }
+  .l-pd-left {
+      padding-left: 15px;
+  }
+  .l-pd-right {
+      padding-right: 15px;
+  }
+  .l-pd0-left {
+      margin-left: -15px;
+  }
+  .l-pd0-right {
+      margin-right: -15px;
+  }
+  }
+
 
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* mixin
