@@ -1,0 +1,96 @@
+.c-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #303139;
+  font-size: 14px;
+  min-width: 245px;
+  width: fit-content;
+  height: 47px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 0 5px 5px 5px;
+  font-weight: 600;
+  padding: 5px 35px 5px 25px;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 14px;
+    height: 14px;
+    margin: auto;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    background-color: #303139;
+    content: '';
+  }
+
+  &::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 18px;
+    bottom: 0;
+    width: 12px;
+    height: 10px;
+    margin: auto;
+    mask-image: url(../img/common/ico_btn-arrow.svg);
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    background-color: #303139;
+    content: '';
+  }
+
+  &:hover {
+    opacity: 1;
+    background-color: #303139;
+    color: #fff;
+
+    &::before {
+      background-color: #fff;
+    }
+    &::after {
+      background-color: #fff;
+    }
+  }
+
+  &.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.window {
+    &::after {
+      width: 12px;
+      height: 12px;
+      mask-image: url(../img/common/ico_window.svg);
+    }
+  }
+
+
+  &.black {
+    background-color: #303139;
+    color: #fff;
+
+    &::before {
+      background-color: #fff;
+    }
+    &::after {
+      background-color: #fff;
+    }
+
+    &:hover {
+      background-color: #fff;
+      color: #303139;
+
+      &::before {
+        background-color: #303139;
+      }
+      &::after {
+        background-color: #303139;
+      }
+    }
+  }
+}

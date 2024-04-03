@@ -52,7 +52,7 @@ $header-height-pc: 60px;
 $header-height-sp: 50px;
 $font-size: 16px;
 $sec-h-size: 30px;
-$pd-pc: clamp(30px, 8.1vw - 30px, 60px);
+$pd-pc: cl(30,60);
 $pd-pc-negative: clamp(-60px, -8.1vw + 30px, -30px);
 
 //**********************************************************
@@ -61,24 +61,21 @@ $pd-pc-negative: clamp(-60px, -8.1vw + 30px, -30px);
 //
 //***********************************************************/
 @font-face {
-  font-family: 'Maven Pro Medium';
-  src: url('../font/MavenPro-Medium.ttf') format('truetype');
+  font-family: 'ZenMaruGothic';
+  src: url('../fonts/ZenMaruGothic-Medium.woff2') format('woff');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'ZenMaruGothic';
+  src: url('../fonts/ZenMaruGothic-Bold.woff2') format('woff');
+  font-weight: bold;
 }
 
 
-$font-family: "ヒラギノ角ゴシック", -apple-system, BlinkMacSystemFont, Roboto,
+$font-family: "ZenMaruGothic", -apple-system, BlinkMacSystemFont, Roboto,
   "Segoe UI", "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic,
   "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ",
   sans-serif;
-
-$font-new: 'Maven Pro Medium', "ヒラギノ角ゴシック", -apple-system, BlinkMacSystemFont, Roboto,
-"Segoe UI", "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic,
-"游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ",
-sans-serif;
-
-.font-tsuku {
-  font-family: $font-new;
-}
 
 //**********************************************************
 //

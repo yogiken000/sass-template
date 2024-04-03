@@ -1,39 +1,4 @@
 @charset "UTF-8";
-/*――――――――――――――――――――――――――――――――――――――――――――
-/* ベースファイルを定義
-――――――――――――――――――――――――――――――――――――――――――――――*/
-/**********************************************************
-
-ブレイクポイント
-
-***********************************************************/
-@font-face {
-  font-family: "Maven Pro Medium";
-  src: url("../font/MavenPro-Medium.ttf") format("truetype");
-}
-.font-tsuku {
-  font-family: "Maven Pro Medium", "ヒラギノ角ゴシック", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
-}
-
-/*――――――――――――――――――――――――――――――――――――――――――――
-/* pc sp 出し分けのためのcss
-――――――――――――――――――――――――――――――――――――――――――――――*/
-@media screen and (min-width: 769px) {
-  .sp-only {
-    display: none !important;
-  }
-  img {
-    image-rendering: -webkit-optimize-contrast;
-  }
-}
-@media screen and (max-width: 768px) {
-  .pc-only {
-    display: none !important;
-  }
-}
-/*――――――――――――――――――――――――――――――――――――――――――――
-/* font
-――――――――――――――――――――――――――――――――――――――――――――――*/
 /*! destyle.css v4.0.0 | MIT License | https://github.com/nicolas-cusan/destyle.css */
 /* Reset box-model and set borders */
 /* ============================================ */
@@ -409,6 +374,46 @@ th {
   font-weight: bold;
 }
 
+/**********************************************************
+
+ブレイクポイント
+
+***********************************************************/
+@font-face {
+  font-family: "ZenMaruGothic";
+  src: url("../fonts/ZenMaruGothic-Medium.woff2") format("woff");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "ZenMaruGothic";
+  src: url("../fonts/ZenMaruGothic-Bold.woff2") format("woff");
+  font-weight: bold;
+}
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* pc sp 出し分けのためのcss
+――――――――――――――――――――――――――――――――――――――――――――――*/
+@media screen and (min-width: 769px) {
+  .sp-only {
+    display: none !important;
+  }
+  img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+@media screen and (max-width: 768px) {
+  .pc-only {
+    display: none !important;
+  }
+}
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* font
+――――――――――――――――――――――――――――――――――――――――――――――*/
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* vw
+――――――――――――――――――――――――――――――――――――――――――――――*/
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* line-height
+――――――――――――――――――――――――――――――――――――――――――――――*/
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* html,body
 ――――――――――――――――――――――――――――――――――――――――――――――*/
@@ -425,7 +430,7 @@ body {
   min-height: 100vh;
   color: #003046;
   font-size: 16px;
-  font-family: "ヒラギノ角ゴシック", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  font-family: "ZenMaruGothic", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
   line-height: 1.6;
   background-color: #fff;
   font-weight: 300;
@@ -459,14 +464,6 @@ body.is-active {
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* デフォルトの設定
 ――――――――――――――――――――――――――――――――――――――――――――――*/
-* > *:first-child {
-  margin-top: 0;
-}
-
-* > *:last-child {
-  margin-bottom: 0;
-}
-
 img {
   display: block;
   max-width: 100%;
@@ -501,7 +498,7 @@ a rect {
 
 input,
 textarea {
-  font-family: "ヒラギノ角ゴシック", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  font-family: "ZenMaruGothic", -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI", "Helvetica Neue", HelveticaNeue, "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
 }
 
 /*――――――――――――――――――――――――――――――――――――――――――――
@@ -510,7 +507,7 @@ textarea {
 /*** コンテナ ***/
 /*** section ***/
 .sec {
-  padding: 75px clamp(30px, 8.1vw - 30px, 60px) 75px;
+  padding: 75px cl(30, 60) 75px;
   position: relative;
 }
 
@@ -520,17 +517,6 @@ textarea {
   margin: 0 auto;
 }
 
-@media screen and (max-width: 768px) {
-  .sec {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  .inner {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-}
 @media screen and (max-width: 1080px) {
   .sec {
     padding-right: 30px;
@@ -553,24 +539,20 @@ textarea {
     margin: 0 auto;
   }
 }
-.topOnly {
-  display: none;
-}
-
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* 余白調整
 ――――――――――――――――――――――――――――――――――――――――――――――*/
 .l-pd {
-  padding-right: clamp(30px, 8.1vw - 30px, 60px);
-  padding-left: clamp(30px, 8.1vw - 30px, 60px);
+  padding-right: cl(30, 60);
+  padding-left: cl(30, 60);
 }
 
 .l-pd-left {
-  padding-left: clamp(30px, 8.1vw - 30px, 60px);
+  padding-left: cl(30, 60);
 }
 
 .l-pd-right {
-  padding-right: clamp(30px, 8.1vw - 30px, 60px);
+  padding-right: cl(30, 60);
 }
 
 .l-pd0-left {
@@ -602,28 +584,218 @@ textarea {
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* mixin
 ――――――――――――――――――――――――――――――――――――――――――――――*/
-/*** line-height調整 ***/
-/*** 明度変更 ***/
-/*** フォントサイズ、画面幅 ***/
-.strike {
-  position: relative;
+.c-breadArea {
+  margin-bottom: 50px;
 }
-.strike::after {
-  content: "";
-  transform: rotate(7deg);
-  width: 100%;
-  border-top: 2px solid #e53270;
-  position: absolute;
-  top: 50%;
-  left: 0;
+.c-breadArea + * {
+  padding-top: 0;
 }
 
-/*――――――――――――――――――――――――――――――――――――――――――――
-/* component
-――――――――――――――――――――――――――――――――――――――――――――――*/
-/*――――――――――――――――――――――――――――――――――――――――――――
-/* プラグインに関するcss
-――――――――――――――――――――――――――――――――――――――――――――――*/
+.c-breadNav {
+  background-color: #F4F4F4;
+  border-radius: 10px;
+  padding: 12px 20px;
+}
+
+.c-breadList {
+  display: flex;
+  align-items: center;
+  gap: 0 26px;
+}
+.c-breadList li {
+  font-size: 14px;
+  position: relative;
+}
+.c-breadList li + li::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -13px;
+  bottom: 0;
+  width: 1px;
+  height: 13px;
+  margin: auto;
+  background-color: #3B3333;
+  transform: rotate(24deg);
+  content: "";
+}
+.c-breadList a {
+  display: block;
+  text-decoration: underline;
+}
+.c-breadList a:hover {
+  text-decoration: none;
+  opacity: 1;
+}
+.c-breadList li:last-child a {
+  pointer-events: none;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .c-breadArea {
+    margin-bottom: 40px;
+  }
+  .c-breadNav {
+    border-radius: 8px;
+    padding: 10px 20px;
+  }
+  .c-breadList {
+    display: flex;
+    align-items: center;
+    gap: 0 26px;
+    overflow-x: auto;
+  }
+  .c-breadList li {
+    font-size: 13px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .c-breadList li + li::before {
+    top: 0;
+    left: -13px;
+    bottom: 0;
+    width: 1px;
+    height: 13px;
+    transform: rotate(24deg);
+  }
+  .c-breadList a {
+    display: block;
+    text-decoration: underline;
+  }
+  .c-breadList li:last-child a {
+    pointer-events: none;
+    text-decoration: none;
+  }
+}
+.c-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid 1px #303139;
+  font-size: 14px;
+  min-width: 245px;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 47px;
+  background-color: #fff;
+  position: relative;
+  border-radius: 0 5px 5px 5px;
+  font-weight: 600;
+  padding: 5px 35px 5px 25px;
+}
+.c-btn::before {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 14px;
+  height: 14px;
+  margin: auto;
+  -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 0 100%);
+  background-color: #303139;
+  content: "";
+}
+.c-btn::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 18px;
+  bottom: 0;
+  width: 12px;
+  height: 10px;
+  margin: auto;
+  -webkit-mask-image: url(../img/common/ico_btn-arrow.svg);
+          mask-image: url(../img/common/ico_btn-arrow.svg);
+  -webkit-mask-size: 100%;
+          mask-size: 100%;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  background-color: #303139;
+  content: "";
+}
+.c-btn:hover {
+  opacity: 1;
+  background-color: #303139;
+  color: #fff;
+}
+.c-btn:hover::before {
+  background-color: #fff;
+}
+.c-btn:hover::after {
+  background-color: #fff;
+}
+.c-btn.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.c-btn.window::after {
+  width: 12px;
+  height: 12px;
+  -webkit-mask-image: url(../img/common/ico_window.svg);
+          mask-image: url(../img/common/ico_window.svg);
+}
+.c-btn.black {
+  background-color: #303139;
+  color: #fff;
+}
+.c-btn.black::before {
+  background-color: #fff;
+}
+.c-btn.black::after {
+  background-color: #fff;
+}
+.c-btn.black:hover {
+  background-color: #fff;
+  color: #303139;
+}
+.c-btn.black:hover::before {
+  background-color: #303139;
+}
+.c-btn.black:hover::after {
+  background-color: #303139;
+}
+
+.c-linkTxt {
+  text-decoration: underline;
+}
+.c-linkTxt:hover {
+  opacity: 1;
+  text-decoration: none;
+}
+.c-linkTxt.arrow::after {
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  margin: 0 0 -2px 1px;
+  background: url(../img/common/ico_link-txt-arrow.svg) no-repeat center center/100%;
+  content: "";
+}
+
+.c-txtDot {
+  font-size: 14px;
+  position: relative;
+  padding-left: 13px;
+  line-height: 1.71;
+}
+.c-txtDot::before {
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  margin: 0 0 0 0;
+  border-radius: 50%;
+  background-color: #3B3333;
+  content: "";
+}
+.c-txtDot + .c-txtDot {
+  margin-top: 2px;
+}
+
 /* Slider */
 .slick-slider {
   position: relative;
@@ -857,9 +1029,6 @@ textarea {
   opacity: 1;
 }
 
-/*――――――――――――――――――――――――――――――――――――――――――――
-/* レイアウトに関するcss
-――――――――――――――――――――――――――――――――――――――――――――――*/
 .header {
   position: fixed;
   top: 0;
@@ -2359,12 +2528,6 @@ textarea {
   }
 }
 /*――――――――――――――――――――――――――――――――――――――――――――
-/* 個別ページの読み込み
-――――――――――――――――――――――――――――――――――――――――――――――*/
-/*――――――――――――――――――――――――――――――――――――――――――――
-/* utility
-――――――――――――――――――――――――――――――――――――――――――――――*/
-/*――――――――――――――――――――――――――――――――――――――――――――
 /* z-index
 ――――――――――――――――――――――――――――――――――――――――――――――*/
 .u-z1 {
@@ -2604,4 +2767,15 @@ textarea {
 ――――――――――――――――――――――――――――――――――――――――――――――*/
 .u-fw600 {
   font-weight: 600;
+}
+
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* 特殊
+――――――――――――――――――――――――――――――――――――――――――――――*/
+* > *:first-child {
+  margin-top: 0;
+}
+
+* > *:last-child {
+  margin-bottom: 0;
 }/*# sourceMappingURL=style.css.map */

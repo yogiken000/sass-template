@@ -1,0 +1,29 @@
+@use "../global" as *;
+
+.c-txtDot {
+  font-size: 14px;
+  position: relative;
+  padding-left: 13px;
+  line-height: 1.71;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 5px;
+    height: 5px;
+    margin: 0 0 0 0;
+    border-radius: 50%;
+    background-color: #3B3333;
+    content: '';
+  }
+
+  & + & {
+    margin-top: 2px;
+  }
+}
+
+@include sp {
+
+}

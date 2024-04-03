@@ -1,3 +1,5 @@
+@use "../global" as *;
+
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* html,body
 ――――――――――――――――――――――――――――――――――――――――――――――*/
@@ -55,12 +57,6 @@ body {
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* デフォルトの設定
 ――――――――――――――――――――――――――――――――――――――――――――――*/
-* > *:first-child {
-  margin-top: 0;
-}
-* > *:last-child {
-  margin-bottom: 0;
-}
 img {
   display: block;
   max-width: 100%;
@@ -122,18 +118,6 @@ textarea {
 }
 
 
-@include sp {
-  .sec {
-    padding-right: 15px;
-    padding-left: 15px;
-  }
-  .inner {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-  }
-}
-
 @include mid {
   .sec {
     padding-right: 30px;
@@ -156,10 +140,6 @@ textarea {
     max-width: 1280px;
     margin: 0 auto;
   }
-}
-
-.topOnly {
-  display: none;
 }
 
 
@@ -206,50 +186,3 @@ textarea {
 /*――――――――――――――――――――――――――――――――――――――――――――
 /* mixin
 ――――――――――――――――――――――――――――――――――――――――――――――*/
-/*** line-height調整 ***/
-@mixin lineHeight($line-height: 1.6) {
-  &::before,
-  &::after {
-    content: "";
-    display: block;
-    width: 0;
-    height: 0;
-  }
-
-  &::before {
-    margin-top: calc((1 - #{$line-height}) * 0.5em);
-  }
-
-  &::after {
-    margin-bottom: calc((1 - #{$line-height}) * 0.5em);
-  }
-}
-
-/*** 明度変更 ***/
-@mixin ChangeHoverBgColor($color) {
-  background-color: $color;
-
-  &:hover {
-    background-color: lighten($color, 10%);
-    opacity: 1;
-  }
-}
-
-/*** フォントサイズ、画面幅 ***/
-@mixin vw($font-size, $base-width: 375) {
-  font-size: $font-size / $base-width * 100vw;
-}
-
-.strike {
-  position: relative;
-  &::after {
-    content: "";
-    transform: rotate(7deg);
-    width: 100%;
-    border-top: 2px solid #e53270;
-    position: absolute;
-    top: 50%;
-    left: 0;
-  }
-
-}

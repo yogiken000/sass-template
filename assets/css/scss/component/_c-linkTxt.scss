@@ -1,0 +1,21 @@
+@use "../global" as *;
+
+.c-linkTxt {
+  text-decoration: underline;
+
+  &:hover {
+    opacity: 1;
+    text-decoration: none;
+  }
+
+  &.arrow {
+    &::after {
+      display: inline-block;
+      width: 1.1em;
+      height: 1.1em;
+      margin: 0 0 -2px 1px;
+      background: url(../img/common/ico_link-txt-arrow.svg) no-repeat center center/100%;
+      content: '';
+    }
+  }
+}
