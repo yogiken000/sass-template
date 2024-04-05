@@ -10,7 +10,6 @@
 html {
 
   scroll-behavior: smooth;
-  overflow-x: hidden;
 
   @include sp {
 
@@ -19,38 +18,21 @@ html {
 
 body {
   min-height: 100vh;
-  color: #003046;
+  color: #001C10;
   font-size: 16px;
   font-family: $font-family;
   line-height: 1.6;
   background-color: #fff;
   font-weight: 300;
   position: relative;
-  padding-bottom: 6px;
 
   &.is-active {
     overflow: hidden;
   }
 }
-.bodyBorder {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 20;
-  width: calc(100%);
-  height: calc(100%);
-  border: solid 6px #009ed9;
-  pointer-events: none;
-}
 
 @include sp {
-  body {
-    min-width: inherit;
-    padding-bottom: 4px;
-  }
-  .bodyBorder {
-    border-width: 4px;
-  }
+
 }
 
 
@@ -102,40 +84,30 @@ textarea {
 /* 共通のレイアウト
 ――――――――――――――――――――――――――――――――――――――――――――――*/
 
-/*** コンテナ ***/
-.l-bodyContainer {
-}
 
 /*** section ***/
-.sec {
+.l-section {
   padding: 75px $pd-pc 75px;
   position: relative;
+
+
 }
-.inner {
+.l-inner {
   width: 100%;
-  max-width: $container-width;
+  max-width: $l-inner;
   margin: 0 auto;
-}
 
-
-@include mid {
-  .sec {
-    padding-right: 30px;
-    padding-left: 30px;
-  }
-  .inner {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
+  &.--s {
+    max-width: $l-inner--s;
   }
 }
 
 @include sp {
-  .sec {
+  .l-section  {
     padding-right: 15px;
     padding-left: 15px;
   }
-  .inner {
+  .l-inner {
     width: 100%;
     max-width: 1280px;
     margin: 0 auto;
