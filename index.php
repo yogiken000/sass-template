@@ -1,6 +1,6 @@
 <?php
 $body_class = 'index';
-require_once("header.php"); ?>
+require_once($_SERVER['DOCUMENT_ROOT'] . '/header.php');  ?>
 
 
-<?php require_once("footer.php"); ?>
+<?php require_once($_SERVER['DOCUMENT_ROOT'] . '/footer.php');
