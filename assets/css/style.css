@@ -393,7 +393,7 @@ th {
 /* pc sp 出し分けのためのcss
 ――――――――――――――――――――――――――――――――――――――――――――――*/
 @media screen and (min-width: 769px) {
-  .sp-only {
+  .sp {
     display: none !important;
   }
   img {
@@ -401,7 +401,7 @@ th {
   }
 }
 @media screen and (max-width: 768px) {
-  .pc-only {
+  .pc {
     display: none !important;
   }
 }

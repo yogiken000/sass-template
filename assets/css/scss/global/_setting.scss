@@ -87,7 +87,7 @@ $font-family: "ZenMaruGothic", -apple-system, BlinkMacSystemFont, Roboto,
 /* pc sp 出し分けのためのcss
 ――――――――――――――――――――――――――――――――――――――――――――――*/
 @include pc {
-  .sp-only {
+  .sp {
     display: none !important;
   }
   img {
@@ -96,7 +96,7 @@ $font-family: "ZenMaruGothic", -apple-system, BlinkMacSystemFont, Roboto,
 }
 
 @include sp {
-  .pc-only {
+  .pc {
     display: none !important;
   }
 }
