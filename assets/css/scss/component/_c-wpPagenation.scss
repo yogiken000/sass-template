@@ -1,0 +1,107 @@
+
+@use "../global" as *;
+
+.c-wpPagenation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 77px;
+}
+
+ul.page-numbers {
+  display: flex;
+  align-items: center;
+  gap: 0 8px;
+}
+a.page-numbers,
+.page-numbers.current {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border: solid 1px #64C8ED;
+  color: #fff;
+  background-color: #64C8ED;
+  border-radius: 50%;
+  font-size: 16px;
+  font-weight: 600;
+}
+a.page-numbers {
+
+  &:hover {
+    color: #64C8ED;
+    background-color: #fff;
+    opacity: 1;
+  }
+}
+.page-numbers.current {
+  color: #64C8ED;
+  background-color: #fff;
+}
+.dots.page-numbers {
+  color: #64C8ED;
+  position: relative;
+}
+.next.page-numbers,
+.prev.page-numbers {
+  position: relative;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 17px;
+    height: 14px;
+    margin: auto;
+    background-color: #fff;
+    mask-image: url(../img/common/ico_pagenation-arrow.svg);
+    mask-size: 100%;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    content: '';
+  }
+
+  &:hover::before {
+    background-color: #64C8ED;
+  }
+}
+.prev.page-numbers {
+  &::before {
+    transform: rotate(180deg);
+  }
+}
+
+
+
+@include sp {
+  .c-wpPagenation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+  }
+
+  ul.page-numbers {
+    display: flex;
+    align-items: center;
+    gap:0 6px
+  }
+  a.page-numbers,
+  .page-numbers.current {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+  }
+  a.page-numbers {
+
+  }
+  .page-numbers.current {
+
+  }
+}

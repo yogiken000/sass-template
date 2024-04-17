@@ -30,6 +30,10 @@
   @return clamp(#{$min-size}px, calc(#{$min-size}px + (($max-size - $min-size) * ((100vw - #{$min-viewport}px) / ($max-viewport - $min-viewport)))), #{$max-size}px);
 }
 
+@function ncl($min-size, $max-size, $min-viewport: 768, $max-viewport: 1280) {
+  @return clamp(#{$max-size}px, calc(#{$min-size}px + (($max-size - $min-size) * ((100vw - #{$min-viewport}px) / (#{$max-viewport} - #{$min-viewport})))), #{$min-size}px);
+}
+
 @function clsp($min-size, $max-size, $min-viewport: 375, $max-viewport: 767) {
   @return clamp(#{$min-size}px, calc(#{$min-size}px + (($max-size - $min-size) * ((100vw - #{$min-viewport}px) / ($max-viewport - $min-viewport)))), #{$max-size}px);
 }

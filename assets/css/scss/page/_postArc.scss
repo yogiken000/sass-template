@@ -1,0 +1,110 @@
+@use "../global" as *;
+
+.arcTaxonomy__ttl {
+  font-size: 26px;
+  margin-bottom: 30px;
+}
+@include sp {
+  .arcTaxonomy__ttl {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+/*――――――――――――――――――――――――――――――――――――――――――――
+/* blogArcArea
+――――――――――――――――――――――――――――――――――――――――――――――*/
+.postArcList {
+
+}
+.postArcList__item {
+  & + & {
+    margin-top: 31px;
+  }
+}
+.postList__link {
+  display: flex;
+  align-items: flex-start;
+  gap:0 cl(30,54);
+}
+.postArcList__imgBox {
+  flex: 1 1 300px;
+}
+.postArcList__img {
+
+}
+.postArcList__contBox {
+  flex: 1 1 531px;
+  margin-top: 39px;
+}
+.postArcHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:10px 10px;
+  margin-bottom: 13px;
+}
+.postArcList__ttl {
+  margin-bottom: 8px;
+  font-size: 24px;
+  color: #64C8ED;
+  font-weight: bold;
+  line-height: 1.95;
+}
+.postArcList__txt {
+  font-size: 14px;
+  line-height: 1.6429;
+}
+
+
+@include sp {
+  .postArcList {
+
+  }
+  .postArcList__item {
+    & + & {
+      margin-top: 31px;
+    }
+  }
+  .postList__link {
+    display: flex;
+    align-items: flex-start;
+    gap:0 25px;
+  }
+  .postArcList__imgBox {
+    flex: 1 1 320px;
+  }
+  .postArcList__img {
+
+  }
+  .postArcList__contBox {
+    flex: 1 1 531px;
+    margin-top: 15px;
+  }
+  .postArcHead {
+    margin-bottom: 13px;
+  }
+  .postArcList__ttl {
+    margin-bottom: 8px;
+    font-size: 20px;
+    line-height: 1.7;
+  }
+  .postArcList__txt {
+    font-size: 14px;
+  }
+}
+
+@media (max-width:500px) {
+  .postList__link {
+    display: block;
+  }
+  .postArcHead {
+    justify-content: flex-start;
+    margin-bottom: 13px;
+  }
+  .postArcList__imgBox {
+    width: 70%;
+    margin-inline: auto;
+  }
+}

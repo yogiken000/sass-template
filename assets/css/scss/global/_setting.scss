@@ -54,7 +54,7 @@ $header-height-sp: 50px;
 $font-size: 16px;
 $sec-h-size: 30px;
 $pd-pc: cl(30,60);
-$pd-pc-negative: clamp(-60px, -8.1vw + 30px, -30px);
+$pd-pc-negative: ncl(-30,-60);
 
 //**********************************************************
 //

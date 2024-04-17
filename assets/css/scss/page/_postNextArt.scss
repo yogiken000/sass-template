@@ -1,0 +1,136 @@
+@use "../global" as *;
+
+.postNextArt {
+  margin-top: 35px;
+  display: flex;
+  gap: 22px 21px;
+}
+.postNextArt__link {
+  display: flex;
+  align-items: center;
+  width: 50%;
+  gap: 21px 20px;
+  padding: 23px 25px 23px 63px;
+  background-color: #EDF9FD;
+  border-radius: 100px;
+  position: relative;
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 24px;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    margin: auto;
+    background: url(../img/common/ico_post-next-arrow.svg) no-repeat center center/100%;
+    content: '';
+  }
+}
+.postNextArt__cont {
+  flex: 1;
+}
+.postNextArt__linkTxt {
+  margin-bottom: 5px;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1;
+  color: #64C8ED;
+  position: relative;
+}
+.postNextArt__ttl {
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.625;
+}
+
+/*** prev ***/
+.postNextArt__link.prev {
+
+}
+
+/*** next ***/
+.postNextArt__link.next {
+
+  margin: 0 0 0 auto;
+  padding-left: 25px;
+  padding-right: 63px;
+
+  &::before {
+    left: auto;
+    right: 24px;
+    transform: rotate(180deg);
+  }
+
+  .postNextArt__cont {
+    order: 1;
+  }
+  .postNextArt__linkTxt {
+    padding: 0 0 0 0;
+    text-align: right;
+
+    &::before {
+      left: auto;
+      right: 0;
+      transform: rotate(180deg);
+    }
+  }
+  .postNextArt__ttl {
+    text-align: right;
+  }
+}
+
+@include sp {
+  .postNextArt {
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 0;
+  }
+  .postNextArt__link {
+    display: flex;
+    width: 100%;
+    gap: 21px 15px;
+    padding-top: 14px;
+    padding-bottom: 12px;
+
+  }
+  .postNextArt__cont {
+    flex: 1;
+  }
+  .postNextArt__linkTxt {
+    margin-bottom: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+
+  }
+  .postNextArt__ttl {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.625;
+  }
+
+  /*** prev ***/
+  .postNextArt__link.prev {
+
+  }
+
+  /*** next ***/
+  .postNextArt__link.next {
+
+    margin: 0 0 0 auto;
+    .postNextArt__imgBox {
+      order: 2;
+    }
+    .postNextArt__cont {
+      order: 1;
+    }
+    .postNextArt__linkTxt {
+      padding: 0 0 0 0;
+      text-align: right;
+
+    }
+  }
+}
