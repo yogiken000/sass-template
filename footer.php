@@ -1,4 +1,4 @@
-<footer class="footer">
+<!-- <footer class="footer">
   <div class="footerContact">
     <div class="l-inner --s">
       <div class="footerContact__box tel">
@@ -85,4 +85,4 @@
   <div class="footerBitknot">
     <a href="https://bitknot.co.jp/" target="_blank" class="footerBitknot__link"><img src="/assets/img/common/logo_bitknot.svg" alt="bitknot" class="footerBitknot__img"></a>
   </div>
-</footer>
+</footer> -->

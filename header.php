@@ -28,7 +28,7 @@
 
 <body class="<?= $body_class; ?>">
 
-  <header class="header">
+  <!-- <header class="header">
     <div class="l-inner">
       <div class="headerTop">
         <ul class="headerSnsList">
@@ -66,4 +66,4 @@
         </ul>
       </nav>
     </div>
-  </header>
+  </header> -->
