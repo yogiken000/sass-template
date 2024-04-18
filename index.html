@@ -18,7 +18,21 @@
 
   <div class="topBox"></div>
   <div class="container">
+
+    <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+
+    <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+
+    <p>ダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミーダミー</p>
+
+
     <div class="car"></div>
+
+    <div class="road obj01"></div>
+    <div class="road obj02"></div>
+    <div class="road obj03"></div>
+    <div class="road obj04"></div>
+    <div class="road obj05"></div>
   </div>
 
   <!-- <div class="path" id="viewport">
@@ -28,91 +42,119 @@
   <script>
     const tl = gsap.timeline();
 
-    tl.to('.car', { // .box => アニメーションさせる要素
+    tl.to('.car', {
       scrollTrigger: {
-        trigger: '.container', // トリガーとなる要素（アニメーションの開始、終了の位置決定に使用する）
-        start: 'top center', // アニメーションの開始位置の指定
+        trigger: '.container',
+        start: '0 center',
         end: "400px center",
         scrub: 0,
-        markers: true
+        // invalidateOnRefresh: true,
+        // markers: true
       },
       y: 400,
       ease: "none"
-    }).to('.car', { // .box => アニメーションさせる要素
+    }).to('.car', {
       scrollTrigger: {
-        trigger: '.container', // トリガーとなる要素（アニメーションの開始、終了の位置決定に使用する）
-        start: "400px center", // スクロール量200pxでトリガー開始
+        trigger: '.container',
+        start: "380px center",
         end: "400px center",
         scrub: 0,
-        markers: true,
+        // invalidateOnRefresh: true,
+        // markers: true,
       },
       rotate: 90,
-      ease: "power4.out"
-    }).to('.car', { // .box => アニメーションさせる要素
+      ease: "none"
+    }).to('.car', {
       scrollTrigger: {
-        trigger: '.container', // トリガーとなる要素（アニメーションの開始、終了の位置決定に使用する）
-        start: "400px center", // スクロール量200pxでトリガー開始
+        trigger: '.container',
+        start: "400px center",
         end: "800px center",
         scrub: 0,
-        markers: true,
-        pin: true
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
       },
-      x: 400, // アニメーションの内容
+      x: "-400",
       ease: "none"
-    }).to('.car', { // .box => アニメーションさせる要素
+    }).to('.car', {
       scrollTrigger: {
-        trigger: '.container', // トリガーとなる要素（アニメーションの開始、終了の位置決定に使用する）
-        start: "800px center", // スクロール量200pxでトリガー開始
-        end: "1500px center",
+        trigger: '.container',
+        start: "401px center",
+        end: "420px center",
         scrub: 0,
+        // markers: true,
+        invalidateOnRefresh: true,
       },
-      y: 700, // アニメーションの内容
+      rotate: 0,
+      ease: "none"
+    }).to('.car', {
+      scrollTrigger: {
+        trigger: '.container',
+        start: "401px center",
+        end: "880px center",
+        scrub: 0,
+        // markers: true,
+        invalidateOnRefresh: true,
+      },
+      y: 880,
+      ease: "none"
+    }).to('.car', {
+      scrollTrigger: {
+        trigger: '.container',
+        start: "880px center",
+        end: "900px center",
+        scrub: 0,
+        // markers: true,
+        invalidateOnRefresh: true,
+      },
+      rotate: -90,
+      ease: "none"
+    }).to('.car', {
+      scrollTrigger: {
+        trigger: '.container',
+        start: "900px center",
+        end: "1210px center",
+        scrub: 0,
+        // markers: true,
+        invalidateOnRefresh: true,
+        pin: true,
+      },
+      x: "+=400",
+      ease: "none"
+    }).to('.car', {
+      scrollTrigger: {
+        trigger: '.container',
+        start: "901px center",
+        end: "920px center",
+        scrub: 0,
+        // markers: true,
+        invalidateOnRefresh: true,
+      },
+      rotate: 0,
+      ease: "none"
+    }).to('.car', {
+      scrollTrigger: {
+        trigger: '.container',
+        start: "920px center",
+        end: "1320px center",
+        scrub: 0,
+        // markers: true,
+        invalidateOnRefresh: true,
+      },
+      y: "+=400",
       ease: "none"
     });
 
-
-    // // 縦の移動アニメーション
-    // gsap.to(car, {
-    //   scrollTrigger: {
-    //     trigger: "#viewport",
-    //     start: "top top",
-    //     end: "1000 top",
-    //     scrub: true,
-    //     // markers: true
-    //   },
-    //   y: "1000px" // 車を下に500px移動
-    // });
-
-    // // 横の移動アニメーション
-    // gsap.to(car, {
-    //   scrollTrigger: {
-    //     trigger: "#viewport",
-    //     start: "1000 top",
-    //     end: "1500 top",
-    //     scrub: true,
-    //     pin: true // この区間で車をピンで固定
-    //   },
-    //   rotation: 90, // 車を90度回転
-    //   x: "300px" // 横に300px移動
-    // });
-
-    // // 再び縦の移動
-    // gsap.to(car, {
-    //   scrollTrigger: {
-    //     trigger: "#viewport",
-    //     start: "1500 top",
-    //     end: "2000 top",
-    //     scrub: true
-    //   },
-    //   rotation: 0, // 車の向きを元に戻す
-    //   y: "800px" // 最終的な位置まで下に300pxさらに移動
-    // });
   </script>
 
 
   <style>
     .topBox {
       height: 100vh;
+    }
+
+    p+p {
+      margin-top: 100px;
     }
 
     .container {
@@ -128,10 +170,54 @@
     .car {
       position: absolute;
       top: 0;
-      left: 0;
-      width: 30px;
-      height: 50px;
+      right: 125px;
+      z-index: 2;
+      width: 28px;
+      height: 96px;
+      background: url(/assets/img/common/truck01.png) no-repeat center center /100%;
+    }
+
+    .road {
+      position: absolute;
+      z-index: 0;
       background-color: #000;
+      outline: 1px solid #fff;
+      outline-offset: -3px;
+    }
+
+    .road.obj01 {
+      top: 0;
+      right: 106px;
+      width: 66px;
+      height: 483px;
+    }
+
+    .road.obj02 {
+      top: 417px;
+      right: 106px;
+      width: 500px;
+      height: 66px;
+    }
+
+    .road.obj03 {
+      top: 417px;
+      right: 520px;
+      width: 66px;
+      height: 500px;
+    }
+
+    .road.obj04 {
+      top: 897px;
+      right: 106px;
+      width: 500px;
+      height: 66px;
+    }
+
+    .road.obj05 {
+      top: 897px;
+      right: 106px;
+      width: 66px;
+      height: 500px;
     }
   </style>
 </body>
