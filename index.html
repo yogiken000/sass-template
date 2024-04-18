@@ -21,28 +21,92 @@
     <div class="car"></div>
   </div>
 
+  <!-- <div class="path" id="viewport">
+    <div class="car" id="car">🚗</div>
+  </div> -->
+
   <script>
     const tl = gsap.timeline();
 
     tl.to('.car', { // .box => アニメーションさせる要素
-      y: 400, // アニメーションの内容
       scrollTrigger: {
-        trigger: '.car', // トリガーとなる要素（アニメーションの開始、終了の位置決定に使用する）
-        start: 'top top', // アニメーションの開始位置の指定
-        end: "400px top",
-        scrub: true,
+        trigger: '.container', // トリガーとなる要素（アニメーションの開始、終了の位置決定に使用する）
+        start: 'top center', // アニメーションの開始位置の指定
+        end: "400px center",
+        scrub: 0,
         markers: true
-      }
+      },
+      y: 400,
+      ease: "none"
     }).to('.car', { // .box => アニメーションさせる要素
-      x: -400, // アニメーションの内容
       scrollTrigger: {
-        trigger: '.car', // トリガーとなる要素（アニメーションの開始、終了の位置決定に使用する）
-        start: "400px top", // スクロール量200pxでトリガー開始
-        end: "600px top", // スクロール量400pxで終了
-        scrub: true,
-        markers: true
-      }
+        trigger: '.container', // トリガーとなる要素（アニメーションの開始、終了の位置決定に使用する）
+        start: "400px center", // スクロール量200pxでトリガー開始
+        end: "400px center",
+        scrub: 0,
+        markers: true,
+      },
+      rotate: 90,
+      ease: "power4.out"
+    }).to('.car', { // .box => アニメーションさせる要素
+      scrollTrigger: {
+        trigger: '.container', // トリガーとなる要素（アニメーションの開始、終了の位置決定に使用する）
+        start: "400px center", // スクロール量200pxでトリガー開始
+        end: "800px center",
+        scrub: 0,
+        markers: true,
+        pin: true
+      },
+      x: 400, // アニメーションの内容
+      ease: "none"
+    }).to('.car', { // .box => アニメーションさせる要素
+      scrollTrigger: {
+        trigger: '.container', // トリガーとなる要素（アニメーションの開始、終了の位置決定に使用する）
+        start: "800px center", // スクロール量200pxでトリガー開始
+        end: "1500px center",
+        scrub: 0,
+      },
+      y: 700, // アニメーションの内容
+      ease: "none"
     });
+
+
+    // // 縦の移動アニメーション
+    // gsap.to(car, {
+    //   scrollTrigger: {
+    //     trigger: "#viewport",
+    //     start: "top top",
+    //     end: "1000 top",
+    //     scrub: true,
+    //     // markers: true
+    //   },
+    //   y: "1000px" // 車を下に500px移動
+    // });
+
+    // // 横の移動アニメーション
+    // gsap.to(car, {
+    //   scrollTrigger: {
+    //     trigger: "#viewport",
+    //     start: "1000 top",
+    //     end: "1500 top",
+    //     scrub: true,
+    //     pin: true // この区間で車をピンで固定
+    //   },
+    //   rotation: 90, // 車を90度回転
+    //   x: "300px" // 横に300px移動
+    // });
+
+    // // 再び縦の移動
+    // gsap.to(car, {
+    //   scrollTrigger: {
+    //     trigger: "#viewport",
+    //     start: "1500 top",
+    //     end: "2000 top",
+    //     scrub: true
+    //   },
+    //   rotation: 0, // 車の向きを元に戻す
+    //   y: "800px" // 最終的な位置まで下に300pxさらに移動
+    // });
   </script>
 
 
@@ -57,13 +121,14 @@
       max-width: 1000px;
       margin: 0 auto;
       position: relative;
-      background-color: #ccc;
+      background-color: #b8b8b8;
+      background-image: url("https://www.transparenttextures.com/patterns/batthern.png");
     }
 
     .car {
       position: absolute;
       top: 0;
-      right: 0;
+      left: 0;
       width: 30px;
       height: 50px;
       background-color: #000;
