@@ -40,110 +40,180 @@
   </div> -->
 
   <script>
-    const tl = gsap.timeline();
-
-    tl.to('.car', {
+    const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: '.container',
-        start: '0 center',
-        end: "400px center",
-        scrub: 0,
+        trigger: '.car',
+        start: 'center center',
+        // scrub: 0,
         // invalidateOnRefresh: true,
         // markers: true
       },
-      y: 400,
-      ease: "none"
-    }).to('.car', {
-      scrollTrigger: {
-        trigger: '.container',
-        start: "380px center",
-        end: "400px center",
-        scrub: 0,
-        // invalidateOnRefresh: true,
-        // markers: true,
-      },
-      rotate: 90,
-      ease: "none"
-    }).to('.car', {
-      scrollTrigger: {
-        trigger: '.container',
-        start: "400px center",
-        end: "800px center",
-        scrub: 0,
-        pin: true,
-        anticipatePin: 1,
-        invalidateOnRefresh: true,
-      },
-      x: "-400",
-      ease: "none"
-    }).to('.car', {
-      scrollTrigger: {
-        trigger: '.container',
-        start: "401px center",
-        end: "420px center",
-        scrub: 0,
-        // markers: true,
-        invalidateOnRefresh: true,
-      },
-      rotate: 0,
-      ease: "none"
-    }).to('.car', {
-      scrollTrigger: {
-        trigger: '.container',
-        start: "401px center",
-        end: "880px center",
-        scrub: 0,
-        // markers: true,
-        invalidateOnRefresh: true,
-      },
-      y: 880,
-      ease: "none"
-    }).to('.car', {
-      scrollTrigger: {
-        trigger: '.container',
-        start: "880px center",
-        end: "900px center",
-        scrub: 0,
-        // markers: true,
-        invalidateOnRefresh: true,
-      },
-      rotate: -90,
-      ease: "none"
-    }).to('.car', {
-      scrollTrigger: {
-        trigger: '.container',
-        start: "900px center",
-        end: "1210px center",
-        scrub: 0,
-        // markers: true,
-        invalidateOnRefresh: true,
-        pin: true,
-      },
-      x: "+=400",
-      ease: "none"
-    }).to('.car', {
-      scrollTrigger: {
-        trigger: '.container',
-        start: "901px center",
-        end: "920px center",
-        scrub: 0,
-        // markers: true,
-        invalidateOnRefresh: true,
-      },
-      rotate: 0,
-      ease: "none"
-    }).to('.car', {
-      scrollTrigger: {
-        trigger: '.container',
-        start: "920px center",
-        end: "1320px center",
-        scrub: 0,
-        // markers: true,
-        invalidateOnRefresh: true,
-      },
-      y: "+=400",
-      ease: "none"
     });
+
+    const speed = 0.5;
+    tl
+      .to('.car', {
+        x: 0,
+        y: 390,
+        duration: 2 * speed,
+        ease: "none"
+      })
+      .to('.car', {
+        x: '-=20',
+        y: '+=10',
+        duration: 0.5 * speed,
+        rotate: 90,
+        ease: "none"
+
+      })
+      .to('.car', {
+        x: -400,
+        duration: 2 * speed,
+        ease: "none"
+      })
+      .to('.car', {
+        x: '-=10',
+        y: '+=30',
+        duration: 0.5 * speed,
+        rotate: 0,
+        ease: "none"
+
+      })
+      .to('.car', {
+        y: '+=430',
+        duration: 2 * speed,
+        ease: "none"
+      })
+      .to('.car', {
+        x: '+=10',
+        y: '+=10',
+        duration: 0.5 * speed,
+        rotate: -90,
+        ease: "none"
+
+      })
+      .to('.car', {
+        x: '+=400',
+        duration: 2 * speed,
+        ease: "none"
+      })
+      .to('.car', {
+        x: '+=10',
+        y: '+=30',
+        duration: 0.5 * speed,
+        rotate: 0,
+        ease: "none"
+
+      })
+      .to('.car', {
+        y: '+=400',
+        duration: 2 * speed,
+        ease: "none"
+      })
+
+
+    // tl.to('.car', {
+    //   scrollTrigger: {
+    //     trigger: '.container',
+    //     start: '0 center',
+    //     end: "400px center",
+    //     scrub: 0,
+    //     // invalidateOnRefresh: true,
+    //     // markers: true
+    //   },
+    //   y: 400,
+    //   ease: "none"
+    // }).to('.car', {
+    //   scrollTrigger: {
+    //     trigger: '.container',
+    //     start: "380px center",
+    //     end: "400px center",
+    //     scrub: 0,
+    //     // invalidateOnRefresh: true,
+    //     // markers: true,
+    //   },
+    //   rotate: 90,
+    //   ease: "none"
+    // }).to('.car', {
+    //   scrollTrigger: {
+    //     trigger: '.container',
+    //     start: "400px center",
+    //     end: "800px center",
+    //     scrub: 0,
+    //     pin: true,
+    //     anticipatePin: 1,
+    //     invalidateOnRefresh: true,
+    //   },
+    //   x: "-400",
+    //   ease: "none"
+    // }).to('.car', {
+    //   scrollTrigger: {
+    //     trigger: '.container',
+    //     start: "401px center",
+    //     end: "420px center",
+    //     scrub: 0,
+    //     // markers: true,
+    //     invalidateOnRefresh: true,
+    //   },
+    //   rotate: 0,
+    //   ease: "none"
+    // }).to('.car', {
+    //   scrollTrigger: {
+    //     trigger: '.container',
+    //     start: "401px center",
+    //     end: "880px center",
+    //     scrub: 0,
+    //     // markers: true,
+    //     invalidateOnRefresh: true,
+    //   },
+    //   y: 880,
+    //   ease: "none"
+    // }).to('.car', {
+    //   scrollTrigger: {
+    //     trigger: '.container',
+    //     start: "880px center",
+    //     end: "900px center",
+    //     scrub: 0,
+    //     // markers: true,
+    //     invalidateOnRefresh: true,
+    //   },
+    //   rotate: -90,
+    //   ease: "none"
+    // }).to('.car', {
+    //   scrollTrigger: {
+    //     trigger: '.container',
+    //     start: "900px center",
+    //     end: "1210px center",
+    //     scrub: 0,
+    //     // markers: true,
+    //     invalidateOnRefresh: true,
+    //     pin: true,
+    //   },
+    //   x: "+=400",
+    //   ease: "none"
+    // }).to('.car', {
+    //   scrollTrigger: {
+    //     trigger: '.container',
+    //     start: "901px center",
+    //     end: "920px center",
+    //     scrub: 0,
+    //     // markers: true,
+    //     invalidateOnRefresh: true,
+    //   },
+    //   rotate: 0,
+    //   ease: "none"
+    // }).to('.car', {
+    //   scrollTrigger: {
+    //     trigger: '.container',
+    //     start: "920px center",
+    //     end: "1320px center",
+    //     scrub: 0,
+    //     // markers: true,
+    //     invalidateOnRefresh: true,
+    //   },
+    //   y: "+=400",
+    //   ease: "none"
+    // });
 
   </script>
 
